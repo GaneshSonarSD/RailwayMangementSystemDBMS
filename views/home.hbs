@@ -1,0 +1,81 @@
+<!-- <div class="row">
+  <div class="col-6">Users</div>
+  <div class="col-6 d-flex justify-content-end">
+    <a href="adduser" type="button" class="btn btn-primary align-self-center">+ add User</a>
+  </div>
+</div> -->
+<div class="row">
+  <div class="d-grid gap-2 col-6 mx-auto" style="margin: 7%;">
+    <a href="west"  type="button" class="btn btn-outline-info btn-lg">Western Railway</a>
+
+      <form style="margin: 10%;" class="d-flex" method="POST" action="/" novalidate>
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="You Are At?"
+              name="search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-dark" type="submit">Search</button>
+          </form>
+  </div>
+
+  <div class="d-grid gap-2 col-6 mx-auto" style="margin: 7%; ">
+    <a href="central" name="search" inputmode="western" type="button" class="btn btn-outline-info btn-lg" >Central Railway</a>
+      <form style="margin: 10%;" class="d-flex" method="POST" action="/dest" novalidate>
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Destination Station"
+              name="search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-dark" type="submit">Search</button>
+          </form>
+  </div>
+</div> 
+
+
+<div class="row">
+  <div class="col-6">Users</div>
+  <div class="col-6 d-flex justify-content-end">
+    <a href="fav" type="button" class="btn btn-primary align-self-center">Fav Trains</a>
+  </div>
+</div>
+
+
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col" class="text-end">Train_No</th>
+      <th scope="col" class="text-end">Source_Name</th>
+      <th scope="col" class="text-end">departure_time</th>
+      <th scope="col" class="text-end">Dest_Name</th>
+      <th scope="col" class="text-end">Approaching_time</th>
+      <th scope="col" class="text-end">F_or_S</th>
+      <th scope="col" class="text-end">Ticket_price</th>
+      <th scope="col" class="text-end">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+     
+      <td>{{this.Train_No}}</td>
+      <td>{{this.Source_Name}}</td>
+      <td>{{this.departure_time}}</td>
+      <td>{{this.Dest_Name}}</td>
+      <td>{{this.Approaching_time}}</td>
+      <td>{{this.F_or_S}}</td>
+     <td>{{Ticket_price}}</td> 
+    <td>
+       
+        <a href="/addfav/{{this.departure_time}}" type="button" class="'btn btn-light btn-small"><i class="bi bi-star"></i> Add To Fav</a>
+        
+    </td> 
+    {{/each}}
+  </tbody>
+</table>
+

@@ -1,0 +1,44 @@
+
+
+<div class="row">
+  <div class="col-6">Users</div>
+  <div class="col-6 d-flex justify-content-end">
+    <a href="clearfav" type="button" class="btn btn-primary align-self-center">Clear List</a>
+  </div>
+</div>
+
+
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col" class="text-end">Train_No</th>
+      <th scope="col" class="text-end">Source_Name</th>
+      <th scope="col" class="text-end">departure_time</th>
+      <th scope="col" class="text-end">Dest_Name</th>
+      <th scope="col" class="text-end">Approaching_time</th>
+      <th scope="col" class="text-end">F_or_S</th>
+      <th scope="col" class="text-end">Ticket_price</th>
+      <th scope="col" class="text-end">Action</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+     
+      <td>{{this.Train_No}}</td>
+      <td>{{this.Source_Name}}</td>
+      <td>{{this.departure_time}}</td>
+      <td>{{this.Dest_Name}}</td>
+      <td>{{this.Approaching_time}}</td>
+      <td>{{this.F_or_S}}</td>
+     <td>{{this.Ticket_price}}</td> 
+   <td>
+       
+        <a href="/delfav/{{this.departure_time}}" type="button" class="'btn btn-light btn-small"><i class="bi bi-person-x"></i> Delete</a>    
+        
+    </td> 
+    {{/each}}
+  </tbody>
+</table>
